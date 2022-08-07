@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:islami_app/hadeth_tab.dart';
-import 'package:islami_app/my_colors.dart';
-import 'package:islami_app/quran_tab.dart';
-import 'package:islami_app/radio_tab.dart';
-import 'package:islami_app/sebha_tab.dart';
+import 'package:islami_app/home/hadeth/hadeth_tab.dart';
+import 'package:islami_app/home/quran/quran_tab.dart';
+import 'package:islami_app/home/radio/radio_tab.dart';
+import 'package:islami_app/home/tasbeh/sebha_tab.dart';
+import 'package:islami_app/my_theme.dart';
+
 
 class HomeScreen extends StatefulWidget {
   static const String routeName = 'home';
+
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
@@ -14,7 +16,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   /*===================[Variables]==========================*/
   int selectedIndex = 0;
-  List<Widget> tabs = [QuranTab(),HadethTab(),SebhaTab(),RadioTab()];
+  List<Widget> tabs = [QuranTab(), HadethTab(), SebhaTab(), RadioTab()];
 
   /*========================================================*/
   @override
@@ -28,46 +30,32 @@ class _HomeScreenState extends State<HomeScreen> {
                   'assets/images/background_pattern.png',
                 ))),
         child: Scaffold(
-          backgroundColor: Colors.transparent,
           appBar: AppBar(
-            backgroundColor: Colors.transparent,
-            centerTitle: true,
-            elevation: 0,
             title: const Text(
               'Islami',
-              style: TextStyle(
-                  fontSize: 30,
-                  color: Colors.black,
-                  fontWeight: FontWeight.w500,
-                  fontFamily: 'my-font'),
             ),
           ),
           bottomNavigationBar: Theme(
-            data:
-                Theme.of(context).copyWith(canvasColor: MyColors.primaryColor),
+            data: Theme.of(context)
+                .copyWith(canvasColor: MyTheme.primaryColor),
             child: BottomNavigationBar(
               currentIndex: selectedIndex,
               onTap: (int index) {
                 selectedIndex = index;
                 setState(() {});
               },
-              selectedIconTheme: const IconThemeData(color: Colors.black),
-              unselectedIconTheme: const IconThemeData(color: Colors.white),
-              selectedLabelStyle: const TextStyle(color: Colors.black,),
-              selectedItemColor: Colors.brown,
-              unselectedItemColor: Colors.white,
               items: const [
                 BottomNavigationBarItem(
                   icon: ImageIcon(AssetImage('assets/images/ic_quran.png')),
                   label: 'Quran',
                 ),
                 BottomNavigationBarItem(
-                  icon: ImageIcon(AssetImage('assets/images/ic_sebha.png')),
-                  label: 'Sebha',
-                ),
-                BottomNavigationBarItem(
                   icon: ImageIcon(AssetImage('assets/images/ic_hadeth.png')),
                   label: 'Hadeth',
+                ),
+                BottomNavigationBarItem(
+                  icon: ImageIcon(AssetImage('assets/images/ic_sebha.png')),
+                  label: 'Sebha',
                 ),
                 BottomNavigationBarItem(
                   icon: ImageIcon(AssetImage('assets/images/ic_radio.png')),
