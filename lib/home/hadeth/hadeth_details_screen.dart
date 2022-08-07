@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../my_theme.dart';
+
 class HadethDetailsScreen extends StatefulWidget {
   static const String routeName = 'hadeth-details';
 
@@ -23,7 +25,7 @@ class _hadethStatScreen extends State<HadethDetailsScreen> {
               ))),
       child: Scaffold(
         appBar: AppBar(
-          title: Text(args.title),
+          title: Text('Islami'),
         ),
         body: Container(
           margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 64),
@@ -33,12 +35,25 @@ class _hadethStatScreen extends State<HadethDetailsScreen> {
             color: Colors.white,
             borderRadius: BorderRadius.circular(24),
           ),
-          child: SingleChildScrollView(
-            child: Text(
-              args.content,
-              style: Theme.of(context).textTheme.bodyText1,
-              textAlign: TextAlign.center,
-            ),
+          child: Column(
+            children: [
+              Text(args.title,style: Theme.of(context).textTheme.headline4,),
+              Container(
+                margin: const EdgeInsets.symmetric(horizontal: 20,vertical: 10),
+                width: double.infinity,
+                height: 1.5,
+                color: MyTheme.primaryColor,
+              ),
+              Expanded(
+                child: SingleChildScrollView(
+                  child: Text(
+                    args.content,
+                    style: Theme.of(context).textTheme.bodyText1,
+                    textDirection: TextDirection.rtl,
+                  ),
+                ),
+              ),
+            ],
           ),
         ),
       ),

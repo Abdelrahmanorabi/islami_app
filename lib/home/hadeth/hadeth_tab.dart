@@ -54,7 +54,8 @@ class _HadethTabState extends State<HadethTab> {
                       BorderSide(color: MyTheme.primaryColor, width: 2)),
             ),
             child: Text('Names', style: Theme.of(context).textTheme.headline4)),
-        Expanded(
+        (hadethList.isEmpty)? const CircularProgressIndicator():
+         Expanded(
             child: ListView.separated(
                 itemCount: hadethList.length,
                 itemBuilder: (context, int index) {
@@ -65,7 +66,8 @@ class _HadethTabState extends State<HadethTab> {
                 return Container(
                   margin: const EdgeInsets.symmetric(horizontal: 64),
                   width: double.infinity,
-                  height: 10,
+                  height: 1.5,
+                  color: MyTheme.primaryColor,
                 );
               },
 

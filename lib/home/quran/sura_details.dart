@@ -45,7 +45,7 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
                 ))),
         child: Scaffold(
           appBar: AppBar(
-            title: Text(arguments.title),
+            title: Text('Islami'),
           ),
           body: (verses.isEmpty)
               ? const Center(child: CircularProgressIndicator())
@@ -57,19 +57,32 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(24),
                   ),
-                  child: ListView.separated(
-                      itemCount: verses.length,
-                      itemBuilder: (context, int index) {
-                        return VerseWidget(verses[index], index);
-                      },
-                      separatorBuilder: (context, int index) {
-                        return Container(
-                          margin: const EdgeInsets.symmetric(horizontal: 64),
-                          width: double.infinity,
-                          height: 2,
-                          color: MyTheme.primaryColor,
-                        );
-                      }),
+                  child: Column(
+                    children: [
+                      Text(arguments.title,style:  Theme.of(context).textTheme.headline4,),
+                      Container(
+                        margin: const EdgeInsets.symmetric(horizontal: 20,vertical: 10),
+                        width: double.infinity,
+                        height: 1.5,
+                        color: MyTheme.primaryColor,
+                      ),
+                      Expanded(
+                        child: ListView.separated(
+                            itemCount: verses.length,
+                            itemBuilder: (context, int index) {
+                              return VerseWidget(verses[index], index);
+                            },
+                            separatorBuilder: (context, int index) {
+                              return Container(
+                                margin: const EdgeInsets.symmetric(horizontal: 64),
+                                width: double.infinity,
+                                height: 2,
+                                color: MyTheme.primaryColor,
+                              );
+                            }),
+                      ),
+                    ],
+                  )
                 ),
         ),
       ),
