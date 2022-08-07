@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../my_theme.dart';
+import 'hadeth_tab.dart';
 
 class HadethDetailsScreen extends StatefulWidget {
   static const String routeName = 'hadeth-details';
@@ -13,7 +14,7 @@ class _hadethStatScreen extends State<HadethDetailsScreen> {
   @override
   Widget build(BuildContext context) {
     var args =
-        ModalRoute.of(context)!.settings.arguments as HadethDetailsArguments;
+        ModalRoute.of(context)!.settings.arguments as Hadeth;
 
     return SafeArea(
         child: Container(
@@ -61,10 +62,3 @@ class _hadethStatScreen extends State<HadethDetailsScreen> {
   }
 }
 
-// Data class
-class HadethDetailsArguments {
-  String title;
-  String content;
-
-  HadethDetailsArguments(this.title, this.content);
-}
