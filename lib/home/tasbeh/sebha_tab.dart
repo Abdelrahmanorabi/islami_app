@@ -4,8 +4,9 @@ class SebhaTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      backgroundColor: Colors.green,
+    return Container(
+      color: Colors.transparent,
+
     );
   }
 }
