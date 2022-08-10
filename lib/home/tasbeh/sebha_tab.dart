@@ -55,7 +55,7 @@ class _SebhaTabState extends State<SebhaTab> {
                         ? 'assets/images/sebha_head_dark.png'
                         : 'assets/images/sebha_head_light.png')),
                 Positioned(
-                    left: size.width * .20,
+                    left: size.width * .21,
                     top: size.height * .11,
                     child: InkWell(
                       onTap: rotateSebhaBody,
