@@ -51,9 +51,9 @@ class _HadethTabState extends State<HadethTab> {
             decoration: BoxDecoration(
               border: Border.symmetric(
                   horizontal:
-                      BorderSide(color: MyTheme.primaryColor, width: 2)),
+                      BorderSide(color:Theme.of(context).primaryColor, width: 2)),
             ),
-            child: Text('Names', style: Theme.of(context).textTheme.headline4)),
+            child: Text('الأحاديث', style: Theme.of(context).textTheme.headline4)),
         (hadethList.isEmpty)? const CircularProgressIndicator():
          Expanded(
             child: ListView.separated(
@@ -67,7 +67,7 @@ class _HadethTabState extends State<HadethTab> {
                   margin: const EdgeInsets.symmetric(horizontal: 64),
                   width: double.infinity,
                   height: 1.5,
-                  color: MyTheme.primaryColor,
+                  color:Theme.of(context).primaryColor,
                 );
               },
 

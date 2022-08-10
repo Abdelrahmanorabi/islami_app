@@ -3,5 +3,14 @@
   "quran_title": "القرآن",
   "hadeth_title": "الحديث",
   "tasbeh_title": "التسبيح",
-  "radio_title": "الإذاعة"
+  "radio_title": "الإذاعة",
+  "setting_title": "الإعدادت",
+  "theme": "المظهر",
+  "language": "اللغة",
+  "light": "نهاري",
+  "dark": "ليلي",
+  "english": "الإنجليزية",
+  "arabic": "العربية"
+
+
 }

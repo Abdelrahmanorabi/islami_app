@@ -137,9 +137,9 @@ class QuranTab extends StatelessWidget {
             decoration: BoxDecoration(
               border: Border.symmetric(
                   horizontal:
-                      BorderSide(color: MyTheme.primaryColor, width: 2)),
+                      BorderSide(color: Theme.of(context).primaryColor, width: 2)),
             ),
-            child: Text('Names', style: Theme.of(context).textTheme.headline4)),
+            child: Text('اسم السورة', style: Theme.of(context).textTheme.headline4)),
         Expanded(
           child: ListView.separated(
             itemCount: names.length,
@@ -151,7 +151,7 @@ class QuranTab extends StatelessWidget {
                 margin: EdgeInsets.symmetric(horizontal: 64),
                 width: double.infinity,
                 height: 2,
-                color: MyTheme.primaryColor,
+                color:Theme.of(context).primaryColor,
               );
             },
           ),
